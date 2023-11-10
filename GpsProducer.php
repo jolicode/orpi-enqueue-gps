@@ -38,7 +38,7 @@ class GpsProducer implements Producer
         /** @var Topic $topic */
         $topic = $this->context->getClient()->topic($destination->getTopicName());
         $topic->publish([
-            'data' => json_encode($message),
+            'data' => $message->getBody(),
         ]);
     }
 
